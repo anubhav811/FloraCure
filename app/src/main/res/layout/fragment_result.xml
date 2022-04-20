@@ -61,7 +61,6 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <TextView
-                android:id="@+id/disease_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -86,27 +85,33 @@
                 android:text="Scan Results"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
+
             <TextView
+                android:id="@+id/disease_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:fontFamily="@font/general_sans_medium"
-                android:textColor="@color/white"
-                android:gravity="center"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="25dp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="@font/general_sans_medium"
+                android:gravity="center|center_horizontal"
                 android:padding="5dp"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis commodo malesuada. Etiam in libero libero. Proin non dui odio. Sed efficitur lacus vel magna congue efficitur. Fusce vitae molestie."/>
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis commodo malesuada. Etiam in libero libero. Proin non dui odio. Sed efficitur lacus vel magna congue efficitur. Fusce vitae molestie."
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
             <Button
-                android:id="@+id/btn_upload"
+                android:id="@+id/btn_remedies"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"
                 android:backgroundTint="@color/white"
-                android:drawableLeft="@drawable/ic_baseline_upload_24"
+                android:drawableLeft="@drawable/ic_baseline_search_24"
                 android:fontFamily="@font/general_sans_semibold"
-                android:text="Search Remedies"
+                android:text="Learn More"
                 android:textColor="#00744A" />
 
             <Button
