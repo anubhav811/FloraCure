@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_scanFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/action_scanFragment_to_secondPage"
+            app:destination="@id/secondPage" />
+        <action
+            android:id="@+id/action_scanFragment_to_firstPage"
+            app:destination="@id/firstPage" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -26,4 +32,27 @@
 
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/secondPage"
+        android:name="com.anubhav.leafdiseasedetection.ui.fragments.SecondPage"
+        android:label="fragment_second_page"
+        tools:layout="@layout/fragment_second_page" >
+        <action
+            android:id="@+id/action_secondPage_to_thirdPage"
+            app:destination="@id/thirdPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstPage"
+        android:name="com.anubhav.leafdiseasedetection.ui.fragments.FirstPage"
+        android:label="fragment_first_page"
+        tools:layout="@layout/fragment_first_page" >
+        <action
+            android:id="@+id/action_firstPage_to_secondPage"
+            app:destination="@id/secondPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdPage"
+        android:name="com.anubhav.leafdiseasedetection.ui.fragments.ThirdPage"
+        android:label="fragment_third_page"
+        tools:layout="@layout/fragment_third_page" />
 </navigation>
