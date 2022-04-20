@@ -5,12 +5,14 @@
       <map>
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/font-v26/general_sans.xml" value="0.2796875" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/font/general_sans.xml" value="0.28020833333333334" />
-        <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/layout/fragment_camera.xml" value="0.25" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/layout/fragment_remedy_w_v.xml" value="0.25" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/layout/fragment_result.xml" value="0.264" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/layout/fragment_scan.xml" value="0.2" />
+        <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/layout/fragment_splash.xml" value="0.25" />
+        <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/menu/navigation_menu.xml" value="0.25" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/xml/fileprovider.xml" value="0.17037037037037037" />
       </map>
     </option>
