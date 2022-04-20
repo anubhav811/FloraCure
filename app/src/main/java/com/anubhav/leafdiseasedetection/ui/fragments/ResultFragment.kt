@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.fragment_result.*
 import kotlinx.android.synthetic.main.fragment_scan.*
 import kotlinx.android.synthetic.main.fragment_scan.imageView
 import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 
 class ResultFragment : Fragment() {
@@ -50,9 +51,12 @@ class ResultFragment : Fragment() {
             bitmap = args.bitmap
         }
 
-        val model = Model.newInstance(this)
+        val model = Model.newInstance(requireContext())
 
         val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
+
+        val tensorBuffer = TensorImage.fromBitmap(bitmap)
+        val byteBuffer = tensorBuffer.buffer
         inputFeature0.loadBuffer(byteBuffer)
 
         val outputs = model.process(inputFeature0)
