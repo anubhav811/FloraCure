@@ -5,16 +5,18 @@
     <item
         android:id="@+id/item1"
         android:title="About the App"
-        android:iconTintMode="screen"
+        android:iconTintMode="add"
         android:icon="@drawable/ic_baseline_grass_24"
         />
     <item
         android:id="@+id/item2"
+        android:iconTintMode="add"
         android:title="How to use the App"
         android:icon="@drawable/ic_baseline_help_24"
         />
     <item
         android:id="@+id/item3"
+        android:iconTintMode="add"
         android:title="Github Repository"
         android:icon="@drawable/ic_github"
         />

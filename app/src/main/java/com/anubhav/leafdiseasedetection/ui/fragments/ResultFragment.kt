@@ -16,17 +16,28 @@ import androidx.navigation.fragment.navArgs
 import com.anubhav.leafdiseasedetection.R
 import com.anubhav.leafdiseasedetection.databinding.FragmentResultBinding
 import com.anubhav.leafdiseasedetection.ml.MobileNetModel
+import okhttp3.Interceptor
 import org.tensorflow.lite.DataType
+import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.support.common.FileUtil
+import org.tensorflow.lite.support.common.TensorProcessor
+import org.tensorflow.lite.support.common.ops.NormalizeOp
+import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+import java.lang.reflect.Array
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
+import java.nio.MappedByteBuffer
+import java.text.Normalizer
 
 
 class ResultFragment : Fragment() {
 
     private var _binding : FragmentResultBinding? = null
     private val binding get() = _binding!!
+    private var PROBABILITY_MEAN = 0.0f
+    private var PROBABILITY_STD = 255.0f
+
 
     lateinit var bitmap: Bitmap
 
@@ -50,22 +61,25 @@ class ResultFragment : Fragment() {
         val names = FileUtil.loadLabels(requireContext(), "names.txt")
 
 
-        if (arguments != null) {
-            binding.scannedImage.setImageURI(args.bitmapUriToBeSent.toUri())
-        }
+
+        binding.scannedImage.setImageURI(args.bitmapUriToBeSent.toUri())
 
         var bitmap = MediaStore.Images.Media.getBitmap(
             requireContext().contentResolver,
             args.bitmapUriToBeSent.toUri()
         )
 
-        bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
+        bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, false)
+
+
+        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
 
         val model = MobileNetModel.newInstance(requireContext())
-        val byteBuffer = ByteBuffer.allocateDirect(3 * 224 * 224 * 4)
+        val byteBuffer = ByteBuffer.allocateDirect(4 * 224 * 224 * 3)
+        byteBuffer.order(ByteOrder.nativeOrder())
 
         val intValues = IntArray(224 * 224)
-        bitmap.getPixels(intValues, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(), bitmap.getHeight())
+        bitmap.getPixels(intValues, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
         var pixel = 0
 
         for (i in 0 until 224) {
@@ -76,7 +90,7 @@ class ResultFragment : Fragment() {
                 byteBuffer.putFloat((`val` and 0xFF) * (1f / 1))
             }
         }
-        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
+
 
         inputFeature0.loadBuffer(byteBuffer)
 

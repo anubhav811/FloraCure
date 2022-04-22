@@ -1,5 +1,7 @@
 package com.anubhav.leafdiseasedetection.ui.activities
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -11,7 +13,6 @@ import com.anubhav.leafdiseasedetection.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var  toggle : ActionBarDrawerToggle
     private lateinit var binding: ActivityMainBinding
 
     lateinit var navController : NavController
@@ -21,18 +22,8 @@ class MainActivity : AppCompatActivity() {
         val view =  binding.root
         setContentView(view)
 
-        toggle = ActionBarDrawerToggle(this,binding.drawerLayout,0,0)
-        binding.drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(toggle.onOptionsItemSelected(item)){
-            return true
-        }
-        return super.onOptionsItemSelected(item)
-    }
 
 }

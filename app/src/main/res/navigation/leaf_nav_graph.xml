@@ -12,13 +12,25 @@
         tools:layout="@layout/fragment_scan" >
         <action
             android:id="@+id/action_scanFragment_to_resultFragment"
-            app:destination="@id/resultFragment" />
+            app:destination="@id/resultFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_scanFragment_to_secondPage"
-            app:destination="@id/secondPage" />
+            app:destination="@id/secondPage"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
         <action
             android:id="@+id/action_scanFragment_to_firstPage"
-            app:destination="@id/firstPage" />
+            app:destination="@id/firstPage"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -27,7 +39,11 @@
         tools:layout="@layout/fragment_result" >
         <action
             android:id="@+id/action_resultFragment_to_scanFragment"
-            app:destination="@id/scanFragment" />
+            app:destination="@id/scanFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <argument android:name="bitmapUriToBeSent"
 
             app:argType="string" />
@@ -37,19 +53,14 @@
         android:name="com.anubhav.leafdiseasedetection.ui.fragments.SecondPage"
         android:label="fragment_second_page"
         tools:layout="@layout/fragment_second_page" >
-        <action
-            android:id="@+id/action_secondPage_to_thirdPage"
-            app:destination="@id/thirdPage" />
+
     </fragment>
     <fragment
         android:id="@+id/firstPage"
         android:name="com.anubhav.leafdiseasedetection.ui.fragments.FirstPage"
         android:label="fragment_first_page"
         tools:layout="@layout/fragment_first_page" >
-        <action
-            android:id="@+id/action_firstPage_to_secondPage"
-            app:destination="@id/secondPage" />
-    </fragment>
+</fragment>
     <fragment
         android:id="@+id/thirdPage"
         android:name="com.anubhav.leafdiseasedetection.ui.fragments.ThirdPage"

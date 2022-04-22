@@ -2,8 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
 }
-
 android {
     compileSdk 31
 
@@ -12,6 +12,7 @@ android {
         minSdk 24
         targetSdk 31
         versionCode 1
+        multiDexEnabled true
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
