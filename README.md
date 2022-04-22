@@ -13,7 +13,7 @@ It can be used by anyone. And especially , it will be very beneficial for people
 
 - [Jupyter Notebookk](https://jupyter.org/)
 - [Anaconda](https://anaconda.org/)
-- [Tensorflow](https://www.tensorflow.org/lite) (Pyhton) for creating tflite model for the app.
+- [Tensorflow](https://www.tensorflow.org/lite) 
 - [Keras](https://keras.io/)
 - [scipy](https://scipy.org/)
 - [matplotlib](https://anaconda.org/conda-forge/matplotlib)
