@@ -1,4 +1,4 @@
-# FloraCure <img src="readme/logo.png">
+# FloraCure <img src="readme/logo.png" width="20px">
 
 
 ### FloraCare is an app that uses CNN to classify plant disease . 
