@@ -24,7 +24,7 @@ It can be used by anyone. And especially , it will be very beneficial for people
 
 
 ### Download
-#### - The apk can be downloaded from [releases](https://github.com/anubhav811/FloraCure/releases) section
+- The apk can be downloaded from [releases](https://github.com/anubhav811/FloraCure/releases) section
 
 
 
