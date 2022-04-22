@@ -27,4 +27,4 @@ It can be used by anyone. And especially , it will be very beneficial for people
 - The apk can be downloaded from [releases](https://github.com/anubhav811/FloraCure/releases) section
 
 
-
+#### Developed by [Anubhav Chachra](https://github.com/anubhav811) and designed by [Sai Ramesh](https://github.com/sairamesh1642)
