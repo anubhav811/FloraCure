@@ -1,17 +1,12 @@
-package com.anubhav.leafdiseasedetection.ui.activities
+package com.anubhav.Floracure.ui.activities
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.PreferenceManager
-import android.util.Log
 import androidx.fragment.app.Fragment
-import com.anubhav.leafdiseasedetection.R
-import com.anubhav.leafdiseasedetection.databinding.ActivityMainBinding
-import com.anubhav.leafdiseasedetection.databinding.ActivityOnBoardingBinding
-import com.anubhav.leafdiseasedetection.ui.fragments.FirstPage
-import com.anubhav.leafdiseasedetection.ui.fragments.SecondPage
-import com.anubhav.leafdiseasedetection.ui.fragments.ThirdPage
+import com.anubhav.FloraCure.databinding.ActivityOnBoardingBinding
+import com.anubhav.Floracure.ui.fragments.FirstPage
+import com.anubhav.Floracure.ui.fragments.SecondPage
+import com.anubhav.Floracure.ui.fragments.ThirdPage
 import com.google.android.material.tabs.TabLayoutMediator
 
 class OnBoarding : AppCompatActivity() {

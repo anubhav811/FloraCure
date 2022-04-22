@@ -1,15 +1,11 @@
-package com.anubhav.leafdiseasedetection.ui.activities
+package com.anubhav.Floracure.ui.activities
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.preference.PreferenceManager
-import android.util.Log
-import com.anubhav.leafdiseasedetection.databinding.ActivityMainBinding
-import com.anubhav.leafdiseasedetection.databinding.ActivitySplashBinding
+import com.anubhav.FloraCure.databinding.ActivitySplashBinding
 
 class Splash : AppCompatActivity() {
     private lateinit var sharedPreference : SharedPreferences

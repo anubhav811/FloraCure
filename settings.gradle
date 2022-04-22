@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         google()
     }
 }
-rootProject.name = "Leaf Disease Detection"
+rootProject.name = "FloraCure"
 include ':app'

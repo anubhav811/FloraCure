@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.fragments.ScanFragment"
+    tools:context="com.anubhav.Floracure.ui.fragments.ScanFragment"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 <FrameLayout

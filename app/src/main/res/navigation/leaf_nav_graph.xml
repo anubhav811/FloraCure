@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/scanFragment"
-        android:name="com.anubhav.leafdiseasedetection.ui.fragments.ScanFragment"
+        android:name="com.anubhav.Floracure.ui.fragments.ScanFragment"
         android:label="fragment_scan"
         tools:layout="@layout/fragment_scan" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.anubhav.leafdiseasedetection.ui.fragments.ResultFragment"
+        android:name="com.anubhav.Floracure.ui.fragments.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" >
         <action
@@ -45,25 +45,24 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
         <argument android:name="bitmapUriToBeSent"
-
             app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/secondPage"
-        android:name="com.anubhav.leafdiseasedetection.ui.fragments.SecondPage"
+        android:name="com.anubhav.Floracure.ui.fragments.SecondPage"
         android:label="fragment_second_page"
         tools:layout="@layout/fragment_second_page" >
 
     </fragment>
     <fragment
         android:id="@+id/firstPage"
-        android:name="com.anubhav.leafdiseasedetection.ui.fragments.FirstPage"
+        android:name="com.anubhav.Floracure.ui.fragments.FirstPage"
         android:label="fragment_first_page"
         tools:layout="@layout/fragment_first_page" >
 </fragment>
     <fragment
         android:id="@+id/thirdPage"
-        android:name="com.anubhav.leafdiseasedetection.ui.fragments.ThirdPage"
+        android:name="com.anubhav.Floracure.ui.fragments.ThirdPage"
         android:label="fragment_third_page"
         tools:layout="@layout/fragment_third_page" />
 </navigation>

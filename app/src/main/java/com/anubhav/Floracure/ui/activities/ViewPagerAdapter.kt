@@ -1,4 +1,4 @@
-package com.anubhav.leafdiseasedetection.ui.activities
+package com.anubhav.Floracure.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

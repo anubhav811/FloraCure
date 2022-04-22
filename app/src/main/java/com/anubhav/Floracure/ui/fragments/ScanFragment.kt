@@ -1,16 +1,9 @@
-package com.anubhav.leafdiseasedetection.ui.fragments
+package com.anubhav.Floracure.ui.fragments
 
-import android.app.ActionBar
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import android.graphics.BitmapFactory
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.os.Environment
-import android.os.storage.StorageManager
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -18,14 +11,12 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.content.FileProvider
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.anubhav.leafdiseasedetection.R
-import com.anubhav.leafdiseasedetection.databinding.FragmentScanBinding
+import com.anubhav.FloraCure.R
+import com.anubhav.FloraCure.databinding.FragmentScanBinding
 import com.github.drjacky.imagepicker.ImagePicker
-import java.io.File
 
 
 class ScanFragment : Fragment() {

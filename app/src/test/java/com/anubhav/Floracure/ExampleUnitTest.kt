@@ -1,4 +1,4 @@
-package com.anubhav.leafdiseasedetection
+package com.anubhav.Floracure
 
 import org.junit.Test
 

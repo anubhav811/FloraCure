@@ -1,14 +1,11 @@
-package com.anubhav.leafdiseasedetection.ui.fragments
+package com.anubhav.Floracure.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.anubhav.leafdiseasedetection.R
-import com.anubhav.leafdiseasedetection.databinding.FragmentFirstPageBinding
-import com.anubhav.leafdiseasedetection.databinding.FragmentScanBinding
-import com.anubhav.leafdiseasedetection.databinding.FragmentSecondPageBinding
+import com.anubhav.FloraCure.databinding.FragmentSecondPageBinding
 
 
 
