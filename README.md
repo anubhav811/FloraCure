@@ -23,8 +23,8 @@ It can be used by anyone. And especially , it will be very beneficial for people
 - https://www.kaggle.com/vipoooool/new-plant-diseases-dataset
 
 
-
-#### The apk can be downloaded from [releases](https://github.com/anubhav811/FloraCure/releases) section
+### Download
+#### - The apk can be downloaded from [releases](https://github.com/anubhav811/FloraCure/releases) section
 
 
 
