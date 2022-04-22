@@ -27,4 +27,10 @@ class SecondPage : Fragment() {
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.howToText.text = "1 . Tap on Upload Image to upload from gallery or Take a picture from your device's camera.\n\n2 . After viewing the result you can look for more info about the device and its diseases.\n"
+    }
+
 }

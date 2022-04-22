@@ -13,4 +13,18 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Buttons" parent="ShapeAppearanceOverlay.Material3.Button">
+
+        <item name="android:layout_width">185dp</item>
+        <item name="android:background">@drawable/rounded</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:fontFamily">@font/general_sans_semibold</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textColor">#00744A</item>
+
+
+    </style>
 </resources>

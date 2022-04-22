@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/onboarding_nav_graph.xml">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onboarding_nav_graph.xml"
+    app:startDestination="@id/firstPage2">
 
+    <fragment
+        android:id="@+id/firstPage2"
+        android:name="com.anubhav.leafdiseasedetection.ui.fragments.FirstPage"
+        android:label="fragment_first_page"
+        tools:layout="@layout/fragment_first_page" >
+        <action
+            android:id="@+id/action_firstPage2_to_secondPage2"
+            app:destination="@id/secondPage2" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondPage2"
+        android:name="com.anubhav.leafdiseasedetection.ui.fragments.SecondPage"
+        android:label="fragment_second_page"
+        tools:layout="@layout/fragment_second_page" >
+        <action
+            android:id="@+id/action_secondPage2_to_thirdPage2"
+            app:destination="@id/thirdPage2" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdPage2"
+        android:name="com.anubhav.leafdiseasedetection.ui.fragments.ThirdPage"
+        android:label="fragment_third_page"
+        tools:layout="@layout/fragment_third_page" />
 </navigation>

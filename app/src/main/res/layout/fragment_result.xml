@@ -103,26 +103,18 @@
 
             <Button
                 android:id="@+id/btn_remedies"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
+                style="@style/Buttons"
+                android:layout_marginTop="15dp"
                 android:backgroundTint="@color/white"
                 android:drawableLeft="@drawable/ic_baseline_search_24"
-                android:fontFamily="@font/general_sans_semibold"
                 android:text="Learn More"
-                android:textColor="#00744A" />
+                 />
 
             <Button
                 android:id="@+id/btn_test_again"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:backgroundTint="@color/white"
+                android:layout_marginTop="10dp"
                 android:drawableLeft="@drawable/ic_baseline_photo_camera_24"
-                android:fontFamily="@font/general_sans_semibold"
+               style="@style/Buttons"
                 android:text="Test Again"
                 android:textColor="#00744A" />
         </LinearLayout>

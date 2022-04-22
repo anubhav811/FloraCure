@@ -59,11 +59,10 @@ class ResultFragment : Fragment() {
             args.bitmapUriToBeSent.toUri()
         )
 
-        bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, false)
+        bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
 
         val model = MobileNetModel.newInstance(requireContext())
-        val byteBuffer = ByteBuffer.allocateDirect(4 * 224 * 224 * 3)
-        byteBuffer.order(ByteOrder.nativeOrder())
+        val byteBuffer = ByteBuffer.allocateDirect(3 * 224 * 224 * 4)
 
         val intValues = IntArray(224 * 224)
         bitmap.getPixels(intValues, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(), bitmap.getHeight())
@@ -95,7 +94,7 @@ class ResultFragment : Fragment() {
             }
         }
 
-        binding.diseaseText.text = String.format(names[maxPos] + "\nCondition: "+ labels[maxPos])
+        binding.diseaseText.text = String.format(names[maxPos] + "\nCondition : "+ labels[maxPos])
 
         model.close()
 

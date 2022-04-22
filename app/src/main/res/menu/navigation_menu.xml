@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <item
         android:id="@+id/item1"
         android:title="About the App"
-        android:icon="@drawable/ic_baseline_search_24"
+        android:iconTintMode="screen"
+        android:icon="@drawable/ic_baseline_grass_24"
         />
     <item
         android:id="@+id/item2"
         android:title="How to use the App"
-        android:icon="@drawable/ic_baseline_search_24"
+        android:icon="@drawable/ic_baseline_help_24"
         />
     <item
         android:id="@+id/item3"
         android:title="Github Repository"
-        android:icon="@drawable/ic_baseline_search_24"
+        android:icon="@drawable/ic_github"
         />
 
 

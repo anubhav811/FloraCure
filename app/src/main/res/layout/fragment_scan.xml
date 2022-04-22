@@ -19,6 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
+
             android:src="@drawable/ic_main_bg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,14 +63,9 @@
 
         <Button
             android:id="@+id/btn_upload"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/white"
+            style="@style/Buttons"
             android:drawableLeft="@drawable/ic_baseline_upload_24"
-            android:fontFamily="@font/general_sans_semibold"
             android:text="Upload Image"
-            android:textColor="#00744A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/imageView2"
             app:layout_constraintHorizontal_bias="0.504"
@@ -77,16 +73,10 @@
             app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
         <Button
-
             android:id="@+id/btn_camera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/white"
             android:drawableLeft="@drawable/ic_baseline_photo_camera_24"
-            android:fontFamily="@font/general_sans_semibold"
-            android:text="Take a picture"
-            android:textColor="#00744A"
+            android:text="Take picture"
+            style="@style/Buttons"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/btn_upload"
             app:layout_constraintStart_toStartOf="@+id/btn_upload"

@@ -13,13 +13,12 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="500dp"
             android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            >
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -35,21 +34,21 @@
                 android:layout_width="225dp"
                 android:layout_height="225dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_page2img"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_page2img" />
 
             <TextView
-                android:id="@+id/disease_text"
+                android:id="@+id/howToText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|center_horizontal"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginRight="15dp"
-                android:fontFamily="@font/general_sans_medium"
+                android:fontFamily="@font/general_sans_semibold"
                 android:gravity="center|center_horizontal"
+                android:maxLines="15"
                 android:padding="5dp"
-                android:text="1 . Tap on Upload Image to upload from gallery or Take a picture from your device's camera.\n\n2 . After viewing the result you can look for more info about the device and its diseases."
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 

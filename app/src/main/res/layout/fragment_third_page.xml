@@ -31,6 +31,7 @@
                 android:textSize="30sp" />
 
             <ImageButton
+                android:id="@+id/arrowBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_arrow"
