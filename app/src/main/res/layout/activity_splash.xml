@@ -22,13 +22,14 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/general_sans"
-        android:text="FloraCure"
-        android:textColor="@color/black"
+        android:fontFamily="@font/general_sans_medium"
+        android:text="@string/app_name"
+        android:textColor="#00744A"
         android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:layout_constraintVertical_bias="0.796" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

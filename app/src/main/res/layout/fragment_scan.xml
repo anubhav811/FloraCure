@@ -64,7 +64,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/general_sans_bold"
-                android:text="FloraCure"
+                android:text="@string/app_name"
                 android:textColor="#00744A"
                 android:textSize="38sp" />
         </LinearLayout>
@@ -121,6 +121,7 @@
         android:fitsSystemWindows="true"
         app:itemIconTint="#48B28F"
         app:menu="@menu/navigation_menu"
+        app:itemTextAppearance="@style/MenuOption"
         app:headerLayout="@layout/header"
        >
         <LinearLayout
@@ -130,16 +131,16 @@
             >
             <TextView
                 android:layout_weight="1"
-                android:textColor="@color/black"
+                android:textColor="#00744A"
                 android:textAlignment="center"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:layout_marginBottom="20dp"
                 android:text="Made with 🖤 by Anubhav and Ramesh"
-                android:fontFamily="@font/general_sans_semibold"
-                android:padding="10dp"
-                android:textSize="13sp"/>
+                android:fontFamily="@font/general_sans_medium"
+                android:padding="15dp"
+                android:textSize="14sp"/>
         </LinearLayout>
 
     </com.google.android.material.navigation.NavigationView>
