@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.preference.PreferenceManager
 import android.util.Log
 import com.anubhav.leafdiseasedetection.databinding.ActivityMainBinding
 import com.anubhav.leafdiseasedetection.databinding.ActivitySplashBinding
@@ -20,19 +21,20 @@ class Splash : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        sharedPreference = getSharedPreferences("FIRST_TIME", Context.MODE_PRIVATE)
-        Log.d("firstime",sharedPreference.getBoolean("firstTime",false).toString())
+        sharedPreference = getSharedPreferences("onBoarding", MODE_PRIVATE);
+        val firstTime = sharedPreference.getBoolean("firstTime",true)
 
         Handler().postDelayed({
 
-            val intent = if (sharedPreference.getBoolean("firstTime", false)) {
-                Intent(this@Splash, MainActivity::class.java)
-            } else {
+            val intent = if (firstTime) {
+                val editor = sharedPreference.edit()
+                editor.putBoolean("firstTime",false)
+                editor.apply()
                 Intent(this@Splash, OnBoarding::class.java)
+            } else {
+                Intent(this@Splash, MainActivity::class.java)
             }
             startActivity(intent)
-            Log.d("firstime",sharedPreference.getBoolean("firstTime",false).toString())
-
             finish()
         }, 1500)
 

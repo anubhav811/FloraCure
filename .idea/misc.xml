@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/drawable/default_dot.xml" value="0.194" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.1" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2335" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/drawable/rounded.xml" value="0.1" />
+        <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/drawable/selected_dot.xml" value="0.194" />
+        <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/drawable/tab_selector.xml" value="0.194" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/font-v26/general_sans.xml" value="0.2796875" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/font/general_sans.xml" value="0.28020833333333334" />
         <entry key="..\:/Learning/Android/LeafDiseaseDetection/app/src/main/res/layout/activity_main.xml" value="0.1" />
