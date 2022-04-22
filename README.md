@@ -19,10 +19,6 @@ It can be used by anyone. And especially , it will be very beneficial for people
 - [matplotlib](https://anaconda.org/conda-forge/matplotlib)
 - [ImagePicker](https://github.com/Drjacky/ImagePicker)
 
-### Implementations
-- Navigation Components : NavGraph , TabLayout
-- Preprocessing and Training of Model on Jupyter
-
 ### Dataset
 - https://www.kaggle.com/vipoooool/new-plant-diseases-dataset
 
