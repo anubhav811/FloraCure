@@ -6,7 +6,7 @@
 #### * The CNN model classifies the disease and it is shown to the user .
 
 ### Intended User
-It can be used by anyone. And especially , it will be very beneficial for people who like to do gardening and farming as well
+It can be used by anyone. And especially , it will be very beneficial for people who like to do gardening and farming .
 
 ### User Interface
 
