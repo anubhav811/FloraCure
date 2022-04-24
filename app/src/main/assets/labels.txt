@@ -1,38 +1,38 @@
-Apple_scab
-Black_rot
-Cedar_apple_rust
-healthy
-healthy
-healthy
-Powdery_mildew
-Cercospora_leaf_spot Gray_leaf_spot
-Common_rust_
-healthy
-Northern_Leaf_Blight
-Black_rot
-Esca_(Black_Measles)
-healthy
-Leaf_blight_(Isariopsis_Leaf_Spot)
-Haunglongbing_(Citrus_greening)
-Bacterial_spot
-healthy
-Bacterial_spot
-healthy
-Early_blight
-healthy
-Late_blight
-healthy
-healthy
-Powdery_mildew
-healthy
-Leaf_scorch
-Bacterial_spot
-Early_blight
-healthy
-Late_blight
-Leaf_Mold
-Septoria_leaf_spot
-Spider_mites Two-spotted_spider_mite
-Target_Spot
-Tomato_mosaic_virus
-Tomato_Yellow_Leaf_Curl_Virus
+Apple Scab
+Black Rot
+Cedar Apple Rust
+Healthy
+Healthy
+Powdery Mildew
+Healthy
+Cercospora Leaf Spot Gray Leaf Spot
+Common Rust
+Northern Leaf Blight
+Healthy
+Black Rot
+Esca Black Measles
+Leaf Blight Isariopsis Leaf Spot
+Healthy
+Haunglongbing Citrus Greening
+Bacterial Spot
+Healthy
+Bell Bacterial Spot
+Bell Healthy
+Early Blight
+Late Blight
+Healthy
+Healthy
+Healthy
+Powdery Mildew
+Leaf Scorch
+Healthy
+Bacterial Spot
+Early Blight
+Late Blight
+Leaf Mold
+Septoria Leaf Spot
+Spider Mites Two Spotted Spider Mite
+Target Spot
+Tomato Yellow Leaf Curl Virus
+Tomato Mosaic Virus
+Healthy

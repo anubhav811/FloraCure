@@ -2,6 +2,7 @@ package com.anubhav.Floracure.ui.fragments
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.res.AssetManager
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
@@ -9,99 +10,74 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.anubhav.FloraCure.R
 import com.anubhav.FloraCure.databinding.FragmentResultBinding
-import com.anubhav.FloraCure.ml.MobileNetModel
-import org.tensorflow.lite.DataType
-import org.tensorflow.lite.support.common.FileUtil
-import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+import com.anubhav.Floracure.ui.activities.Classifier
+import java.io.File
 import java.nio.ByteBuffer
-import java.nio.ByteOrder
 
 
 class ResultFragment : Fragment() {
 
     private var _binding : FragmentResultBinding? = null
     private val binding get() = _binding!!
+    private lateinit var results: Classifier.Recognition
+    private lateinit var mClassifier: Classifier
+    private lateinit var mBitmap: Uri
+    private lateinit var bitmap : Bitmap
+    private var list : ArrayList<String> = ArrayList()
+    private var labels : ArrayList<String> = ArrayList()
+    private lateinit var assetManager : AssetManager
 
+    private val args: ResultFragmentArgs by navArgs()
 
-    lateinit var bitmap: Bitmap
+    private val mInputSize = 224
+    private val mModelPath = "plant_disease_model.tflite"
+    private val mLabelPath = "labels.txt"
 
-    val args: ResultFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentResultBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
-    @SuppressLint("ResourceType")
+
+
+    @SuppressLint("ResourceType", "SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val labels = FileUtil.loadLabels(requireContext(), "labels.txt")
-        val names = FileUtil.loadLabels(requireContext(), "names.txt")
+        assetManager = activity?.assets!!
+        list = assetManager.open("names.txt").bufferedReader().useLines { it.toList() } as ArrayList<String>
+        labels = assetManager.open("labels.txt").bufferedReader().useLines { it.toList() } as ArrayList<String>
+
+        val assets = activity?.assets
+        mClassifier = assets?.let { Classifier(it, mModelPath, mLabelPath, mInputSize) }!!
+
+        mBitmap = args.bitmap.toUri()
+
+        bitmap = MediaStore.Images.Media.getBitmap(requireContext().contentResolver, mBitmap)
+
+        bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, true);
+        binding.scannedImage.setImageBitmap(bitmap)
 
 
-
-        binding.scannedImage.setImageURI(args.bitmapUriToBeSent.toUri())
-
-        var bitmap = MediaStore.Images.Media.getBitmap(
-            requireContext().contentResolver,
-            args.bitmapUriToBeSent.toUri()
-        )
-
-        bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, false)
-
-
-        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
-
-        val model = MobileNetModel.newInstance(requireContext())
-        val byteBuffer = ByteBuffer.allocateDirect(4 * 224 * 224 * 3)
-        byteBuffer.order(ByteOrder.nativeOrder())
-
-        val intValues = IntArray(224 * 224)
-        bitmap.getPixels(intValues, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
-        var pixel = 0
-
-        for (i in 0 until 224) {
-            for (j in 0 until 224) {
-                val `val` = intValues[pixel++] // RGB
-                byteBuffer.putFloat((`val` shr 16 and 0xFF) * (1f / 1))
-                byteBuffer.putFloat((`val` shr 8 and 0xFF) * (1f / 1))
-                byteBuffer.putFloat((`val` and 0xFF) * (1f / 1))
-            }
+        if (mClassifier.recognizeImage(bitmap).firstOrNull() == null) {
+            binding.diseaseText.text= "No leaf detected. Please try again and take a clearer picture.\n"
         }
-
-
-        inputFeature0.loadBuffer(byteBuffer)
-
-        val outputs  = model.process(inputFeature0)
-        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
-
-        val confidences = outputFeature0.floatArray
-
-        var maxPos = 0
-        var maxConfidence = 0f
-        for (i in confidences.indices) {
-            if (confidences[i] > maxConfidence) {
-                maxConfidence = confidences[i]
-                maxPos = i
-            }
+        else {
+            binding.diseaseText.text =
+                list[mClassifier.recognizeImage(bitmap).firstOrNull()!!.id.toInt()] + "\n Condition: " + labels[mClassifier.recognizeImage(bitmap).firstOrNull()!!.id.toInt()] + "\n Confidence: " + mClassifier.recognizeImage(bitmap).firstOrNull()!!.confidence * 100 + " %"
         }
-
-        binding.diseaseText.text = String.format(names[maxPos] + "\nCondition : "+ labels[maxPos])
-
-        model.close()
-
 
         binding.btnTestAgain.setOnClickListener {
             findNavController().apply {
@@ -110,7 +86,7 @@ class ResultFragment : Fragment() {
         }
 
         binding.btnRemedies.setOnClickListener {
-            var intent  = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=${names[maxPos]} diseases and its remedies"))
+            val intent  = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=${labels[mClassifier.recognizeImage(bitmap).firstOrNull()!!.id.toInt()]} and its remedies"))
             startActivity(intent)
         }
 
