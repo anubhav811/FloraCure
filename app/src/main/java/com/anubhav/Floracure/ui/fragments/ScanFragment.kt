@@ -93,10 +93,6 @@ class ScanFragment : Fragment() {
             )
 
 
-//            val imagePickerIntent = Intent(Intent.ACTION_GET_CONTENT)
-//            imagePickerIntent.type = "image/*"
-//            startActivityForResult(imagePickerIntent, 100)
-
         }
 
         binding.btnCamera.setOnClickListener {
@@ -109,8 +105,6 @@ class ScanFragment : Fragment() {
                         .createIntent()
                 }
             )
-//            val callCameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-//            startActivityForResult(callCameraIntent, 101)
         }
 
         val header = binding.navView.getHeaderView(0)
@@ -125,38 +119,6 @@ class ScanFragment : Fragment() {
         }
     }
 
-//    @Deprecated("Deprecated in Java")
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if(requestCode == 101){
-//            if(resultCode == Activity.RESULT_OK && data!= null) {
-//                val img = data.extras?.get("data")
-//                mBitmap = getImageUriFromBitmap(requireContext(), img as Bitmap)
-//                val action =
-//                    ScanFragmentDirections.actionScanFragmentToResultFragment(mBitmap.toString())
-//                findNavController().navigate(action)
-//
-//            }
-//            else{
-//                Toast.makeText(activity,"Camera cancelled",Toast.LENGTH_SHORT).show()
-//            }
-//        } else if(requestCode == 100) {
-//            if (data != null) {
-//                val uri = data.data
-//                if (uri != null) {
-//                    mBitmap = uri
-//                }
-//                val action =
-//                    ScanFragmentDirections.actionScanFragmentToResultFragment(mBitmap.toString())
-//                findNavController().navigate(action)
-//
-//            }
-//            else {
-//                Toast.makeText(context, "Some error occured", Toast.LENGTH_SHORT).show()
-//            }
-//    }
-
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(toggle.onOptionsItemSelected(item)){
             return true
@@ -169,6 +131,8 @@ class ScanFragment : Fragment() {
         val path = MediaStore.Images.Media.insertImage(context.contentResolver, bitmap, "Title", null)
         return Uri.parse(path.toString())
     }
+
+
 
 
 

@@ -40,7 +40,6 @@ class ResultFragment : Fragment() {
     private val mModelPath = "plant_disease_model.tflite"
     private val mLabelPath = "labels.txt"
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,8 +48,6 @@ class ResultFragment : Fragment() {
         _binding = FragmentResultBinding.inflate(inflater, container, false)
         return binding.root
     }
-
-
 
     @SuppressLint("ResourceType", "SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
