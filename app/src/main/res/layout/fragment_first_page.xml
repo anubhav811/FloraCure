@@ -14,48 +14,61 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="500dp"
-            android:orientation="vertical"
             android:gravity="center_vertical"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/guideline10"
             app:layout_constraintEnd_toEndOf="parent"
-            >
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="@+id/guideline9">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/general_sans_bold"
+                android:text="Welcome To FloraCure"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/page1Iv"
+                android:layout_width="225dp"
+                android:layout_height="225dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_page1img" />
+
+            <TextView
+                android:id="@+id/disease_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="@font/general_sans_semibold"
+                android:gravity="center|center_horizontal"
+                android:padding="5dp"
+                android:text="FloraCure is an app that uses CNN to classify plant diseases"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/general_sans_bold"
-            android:text="Welcome To FloraCure"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
 
-        <ImageView
-            android:id="@+id/page1Iv"
-            android:layout_width="225dp"
-            android:layout_height="225dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_page1img"
-            android:layout_marginTop="25dp" />
-
-        <TextView
-            android:id="@+id/disease_text"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|center_horizontal"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginRight="15dp"
-            android:fontFamily="@font/general_sans_semibold"
-            android:gravity="center|center_horizontal"
-            android:padding="5dp"
-            android:text="FloraCure is an app that uses CNN to classify plant diseases"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9"/>
 
-    </LinearLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
