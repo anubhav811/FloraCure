@@ -83,10 +83,25 @@ class ResultFragment : Fragment() {
         }
 
         binding.btnRemedies.setOnClickListener {
-            val intent  = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=${labels[mClassifier.recognizeImage(bitmap).firstOrNull()!!.id.toInt()]} and its remedies"))
-            startActivity(intent)
-        }
+            if (mClassifier.recognizeImage(bitmap).firstOrNull() == null) {
+                Toast.makeText(context,"No leaf detected. Please try again and take a clearer picture.",Toast.LENGTH_SHORT).show()
 
+            } else {
+
+                val intent = Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse(
+                        "https://www.google.com/search?q=${
+                            labels[mClassifier.recognizeImage(
+                                bitmap
+                            ).firstOrNull()!!.id.toInt()]
+                        } and its remedies"
+                    )
+                )
+                startActivity(intent)
+            }
+
+        }
     }
 
 }
